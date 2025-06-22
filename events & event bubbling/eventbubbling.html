@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            background-color: rgb(171, 232, 30);
+            border: 2px solid black;
+            padding: 14px;
+            margin: 14px;
+            cursor: pointer;
+        }
+
+        .papacontainer {
+            background-color: rgb(159, 159, 41);
+            padding: 14px;
+            margin: 14px;
+            border: 2px solid blue;
+        }
+
+        .dadacontainer {
+            background-color: rgb(255, 19, 19);
+            border: 2px solid green;
+            padding: 14px;
+            margin: 14px;
+        } 
+    </style>
+</head>
+<body>
+    <div class="dadacontainer"> hey i m dada
+        <div class="papacontainer"> hey  i am papa
+            <div id="container">heyy my grand father name is dada container</div>
+        </div>
+    </div>
+    <script>
+
+    // EVENT BUBBLING
+        // document.querySelector("#container").addEventListener("click",()=>{
+        //     alert("container was clicked")
+        //  })
+        //  document.querySelector(".papacontainer").addEventListener("click",()=>{
+        //     alert(" papa container was clicked")
+        //  })
+        //  document.querySelector(".dadacontainer").addEventListener("click",()=>{
+        //     alert("dada container was clicked")
+        //  })
+
+        // ṢOLVE THIS PROBLEM
+         
+     document.querySelector("#container").addEventListener("click",(e)=>{
+        e.stopPropagation()
+            alert("container was clicked")
+         })
+         document.querySelector(".papacontainer").addEventListener("click",(e)=>{
+              e.stopPropagation()
+            alert(" papa container was clicked")
+         })
+     
+         document.querySelector(".dadacontainer").addEventListener("click",()=>{
+            alert("dada container was clicked")
+         })
+  
+//  let container = document.getElementById("container");
+//         container.addEventListener("click",()=>{ 
+//     //    here click is an event
+//     document.querySelector(".papacontainer").innerHTML =
+// "<b>yeyy you were clicked enjoy!</b>"})
+
+
+    </script>
+
+
+
+</body>
+</html>
